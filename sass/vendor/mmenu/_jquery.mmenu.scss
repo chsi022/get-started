@@ -1,0 +1,43 @@
+// ----------------------------------------------------------
+// =jquery.mmenu
+// ----------------------------------------------------------
+
+	// Mobile menu vars
+	$mobile-menu: (
+
+		// Outer background
+		outer-background: $white,
+
+		// Link backgrounds
+		background: $white,
+		background-hover: $orange,
+		background-selected: $light-grey,
+
+		// Link text
+		text: $orange,
+		text-hover: $white,
+		text-selected: $orange,
+
+		// General styles
+		arrow-colour: $orange,
+		arrow-colour-hover: $white,
+		selected-arrow-colour: $orange,
+		selected-arrow-colour-hover: $light-grey,
+		border-colour: $light-grey,
+
+		// Search box
+		search-background: $white,
+		search-colour: $light-grey,
+		search-border-radius: 0,
+		search-margins: 15px, // Padding separating the search box from other elements
+		search-height: 50px,
+		search-noresults-colour: $orange
+	);
+
+
+	/* MMenu */
+
+	@import 'jquery.mmenu.oncanvas';
+
+	/* Off canvas */
+	@import 'addons/jquery.mmenu.offcanvas';

@@ -1,0 +1,48 @@
+
+//	mq
+//	Create a media query, defaults to major breakpoints (xs, sm, md, lg) but can be overwritten for specific content areas
+//
+//	@param bp 			:  px, 'xs, sm, md, lg'
+//	@param query1 		:  min !default, max
+//	@param query2 		:  width !default, height
+//
+@mixin mq($bp, $query1: min, $query2: width) {
+	$bp: getBreakPoint($bp);
+
+	// @media (#{$query1}-#{$query2}: (calculateRem($bp))) {
+	@media (#{$query1}-#{$query2}: ($bp)) {
+		$mq-active: true !global;
+		@content;
+		$mq-active: false !global;
+	}
+}
+
+//	getBreakPoint
+//	Return a breakpoint based on global breakpoints
+//
+//	@param bp 			:  string, px
+//
+@function getBreakPoint($bp, $type: 'min') {
+
+	// Check to see if it's a global breakpoint
+	@if ($bp == 'xs' or $bp == 'sm' or $bp == 'md' or $bp == 'lg') {
+		$bp: map-get($guards, $bp);
+	}
+
+	@if ($type == 'max') {
+		$bp: $bp - 1;
+	}
+
+	// Get break point value, minus half the gutter width on each side
+	// $bp: ($bp - ($gutter-size * 1));
+
+	@return $bp;
+}
+
+
+@mixin flex-container($flex-flow: row wrap) {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: $flex-flow;
+  flex-flow: $flex-flow;
+}

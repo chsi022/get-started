@@ -1,0 +1,151 @@
+@mixin mm_colors( $cls: "",
+	$baseBg: $mm_baseBg, $pageShadow: $mm_pageShadow,
+	$color: $mm_color, $dimmedColor: $mm_dimmedColor,
+	$emphasizedBg: $mm_emphasizedBg, $highlightedBg: $mm_highlightedBg,
+	$borderColor: $mm_borderColor
+) {
+	html.mm-opened#{$cls} .mm-page
+	{
+		box-shadow: $pageShadow;
+	}
+	.mm-ismenu#{$cls}
+	{
+		background: $baseBg;
+		color: $color;
+	}
+	.mm-menu#{$cls}
+	{
+		.mm-list
+		{
+			> li:after
+			{
+				border-color: $borderColor;
+			} 
+			> li
+			{
+				> a
+				{
+					&.mm-subclose, 
+					&.mm-subclose:hover
+					{
+						background: $emphasizedBg;
+						color: map-get($mobile-menu, arrow-colour);
+					}
+					&.mm-subclose:before,
+					&.mm-subclose:hover:before,
+					&.mm-subopen:after
+					{
+						border-color: map-get($mobile-menu, arrow-colour);
+					}
+
+					&.mm-subopen:hover:after
+					{
+						border-color: map-get($mobile-menu, arrow-colour-hover);
+					}
+					&.mm-subopen:hover:before {
+						border-left: 1px solid map-get($mobile-menu, arrow-colour-hover);
+					}
+				}
+			}
+			> li.mm-selected
+			{
+				> a:not(.mm-subopen),
+				> span
+				{
+					background: $emphasizedBg;
+				}
+			}
+			> li.mm-label 
+			{
+				background: $highlightedBg;
+			}
+		}
+		
+		&.mm-vertical .mm-list
+		{
+			li.mm-opened
+			{
+				> a.mm-subopen,
+				> ul
+				{
+					background: $highlightedBg;
+				}
+			}
+		}
+	}
+}
+@mixin mm_colors_labels( $cls: "",
+	$highlightedBg: $mm_highlightedBg
+) {
+	.mm-menu#{$cls}
+	{
+		.mm-list li.mm-label > div > div
+		{
+			background: $highlightedBg;
+		}
+	}
+}
+@mixin mm_colors_search( $cls: "",
+	$inputBg: map-get($mobile-menu, search-background), $color: map-get($mobile-menu, search-colour),
+	$dimmedColor: $mm_dimmedColor
+) {
+	.mm-menu#{$cls}
+	{
+		.mm-search input
+		{
+			background: $inputBg;
+			color: $color;
+		}
+		.mm-noresultsmsg
+		{
+			color: $dimmedColor;
+		}
+	}
+}
+@mixin mm_colors_counters( $cls: "",
+	$dimmedColor: $mm_dimmedColor
+) {
+	.mm-menu#{$cls} em.mm-counter
+	{
+		color: $dimmedColor;
+	}
+}
+@mixin mm_colors_header( $cls: "",
+	$dimmedColor: $mm_dimmedColor,
+	$borderColor: $mm_borderColor
+) {
+	.mm-menu#{$cls}
+	{
+		.mm-header
+		{
+			border-color: $borderColor;
+			color: $dimmedColor;
+
+			a:before
+			{
+				border-color: $dimmedColor;
+			}
+		}
+	}
+}
+@mixin mm_colors_toggles( $cls: "",
+	$buttonBg: $mm_baseBg,
+	$offBg: $mm_borderColor, $onBg: $mm_toggleCheckedColor
+) {
+	.mm-menu#{$cls}
+	{
+		label.mm-toggle
+		{
+			background: $offBg;
+		
+			div
+			{
+				background: $buttonBg;
+			}
+		}
+		input.mm-toggle:checked ~ label.mm-toggle
+		{
+			background: $onBg;
+		}
+	}
+}
