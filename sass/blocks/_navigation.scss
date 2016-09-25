@@ -1,0 +1,107 @@
+
+.navigation {
+	float: left;
+	margin: 0;
+	padding: 0;
+	display: none;
+
+	@include mq(md){
+		display: block;		
+	}
+}
+
+.navigation__list {
+	clear: both;
+}
+
+.navigation__item {
+	@include mq(md) {
+		display: block;
+		color: $dark-grey;		
+		float: left;
+		position: relative;
+
+		a {
+			text-decoration: none;
+			color: $dark-grey;	
+			font-family: $font-regular;
+			font-size: $font-s;
+			margin: 15px 14px;
+			display: block;
+			float: left;
+
+
+			&:hover {
+				color: $orange;
+			}
+		}
+	}
+}
+
+.navigation__mobile-nav {
+	display: none;
+}
+ 
+.navigation__trigger-mobile-nav {
+	display: block;
+	text-indent: -9999px;
+	cursor: pointer;
+	float: right;
+	margin: 13px 0 0 0;
+	padding: 0;
+	width: 26px;
+	height: 26px;
+	background: url("#{$icons}menu-mobile.png") no-repeat center center;
+
+	@include mq(md){
+		display: none;
+	}
+}
+
+// MMenu override
+.mm-list > li > span {
+	text-transform: uppercase;
+	color: $dark-grey;
+
+	&:hover {
+		background-color: transparent;
+		color: $dark-grey;
+	}
+}
+.mm-list > li > a {
+	font-family: $font-regular;
+}
+
+.mm-menu.mm-hassearch > .mm-panel {
+	padding-top: 70px
+}
+
+.mm-menu .mm-search {
+	height: 70px;
+	position: relative;
+
+	&:before {
+		content: ' ';
+		display: block;
+		position: absolute;
+		left: 15px;
+		top: 23px;
+		width: 23px;
+		height: 23px;
+		background: url('#{$icons}icon-search.png') center center no-repeat;
+	}
+
+	input {
+		background: none;
+		padding: 0 0 0 30px;
+		border-bottom: 1px solid $dark-grey;
+		height: 40px;
+		line-height: 40px;
+	}
+}
+
+#mm-menu {
+	@include mq(md){
+		display: none;
+	}
+}

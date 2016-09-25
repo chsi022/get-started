@@ -10,7 +10,7 @@
 		@import 'vendor/css-reset-and-normalize-sass/flavored-reset-and-normalize';
 		@import 'base/mixins';
 		@import 'base/vars';
-
+ 
 
 	// Vendor - plugin styles
 	// ----------------------------------------------------------
@@ -22,3 +22,11 @@
 
 	// Blocks - BEM
 	// ----------------------------------------------------------
+		
+		@import 'blocks/header';
+		@import 'blocks/navigation';
+		@import 'blocks/search';
+		@import 'blocks/hero-carousel';
+		@import 'blocks/home';
+		@import 'blocks/button';
+

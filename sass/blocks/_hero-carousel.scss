@@ -1,0 +1,83 @@
+.hero-carousel {
+	position: relative;
+	overflow: hidden;
+	padding-top: 80px;
+}
+
+	.hero-carousel__item {
+		float: left;
+		overflow: hidden;
+		position: relative;
+		img {
+			width: 100%;
+			display: block;
+			float: left;
+		}
+	}
+
+	.hero-carousel__content {
+		@include transform(translate(-50%, -50%));
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 90%;
+		max-width: 710px;
+		text-align: center;
+	}
+
+	.hero-carousel__heading {
+		font-family: $font-regular;
+		font-size: $font-m;
+		font-weight: 300;
+		color: $white;
+		text-align: center;
+		display: inline-block;
+		width: 100%;
+		line-height: 1.4;
+
+		@include mq(xs) {
+			font-size: $font-l;
+		}
+
+		@include mq(sm) {
+			font-size: $font-xl;
+		}
+
+		@include mq(md) {
+			font-size: $font-xxl;
+		}
+
+		@include mq(lg) {
+			font-size: $font-xxl;
+		}
+
+		strong {
+			font-family: $font-regular;
+			font-weight: 300;
+			color: $orange;
+		}
+	}
+
+	.hero-carousel__pager {
+		@include transform(translate(-50%, 0));
+		position: absolute;
+		bottom: 40px;
+		left: 50%;
+		display: none !important;
+
+		@include mq(sm) {
+			display: block !important;
+		}
+
+		a {
+			text-indent: -9999px;
+			display: inline-block;
+			width: 15px;
+			height: 10px;
+			background: url("#{$icons}pager-off.png") no-repeat center center;
+
+			&.selected {
+				background-image: url("#{$icons}pager-on.png")
+			}
+		}
+	}

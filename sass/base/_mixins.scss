@@ -1,11 +1,5 @@
 
-//	mq
-//	Create a media query, defaults to major breakpoints (xs, sm, md, lg) but can be overwritten for specific content areas
-//
-//	@param bp 			:  px, 'xs, sm, md, lg'
-//	@param query1 		:  min !default, max
-//	@param query2 		:  width !default, height
-//
+//	Create a media query, defaults to major breakpoints (xs, sm, md, lg) 
 @mixin mq($bp, $query1: min, $query2: width) {
 	$bp: getBreakPoint($bp);
 
@@ -17,11 +11,7 @@
 	}
 }
 
-//	getBreakPoint
 //	Return a breakpoint based on global breakpoints
-//
-//	@param bp 			:  string, px
-//
 @function getBreakPoint($bp, $type: 'min') {
 
 	// Check to see if it's a global breakpoint
@@ -39,7 +29,7 @@
 	@return $bp;
 }
 
-
+//	Create a flex container
 @mixin flex-container($flex-flow: row wrap) {
   display: -webkit-flex;
   display: flex;

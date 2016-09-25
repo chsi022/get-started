@@ -1,0 +1,40 @@
+.header {
+	height: 80px;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	background-color: $white;
+}
+	.header__logo {
+		float: left;
+		display: block;
+		margin-top: 20px;
+		margin-left: 20px;
+	}
+
+	.header__right-container {
+		float: right;
+		padding-right: 30px;
+		padding-top: 16px;
+
+		@include mq(md) {
+			padding-right: 78px;
+		}
+	}
+
+	.header__nav-blcok {
+		float: right;
+	}
+
+	.header__search-block {
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		@include mq(md) {
+			display: block;
+		}
+	}

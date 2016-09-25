@@ -1,0 +1,97 @@
+.home {
+	
+}
+
+	.home__section {
+		padding-top: 55px;
+		padding-bottom: 55px;
+	}
+	.home__section--grey {
+		@extend .home__section;
+		background-color: $almost-white;
+	}
+
+	.home__into {
+		text-align: center;
+		font-family: $font-regular;
+		font-size: $font-s;
+		color: $dark-grey;
+		max-width: 800px;
+		line-height: 1.4;
+		font-weight: 300;
+		margin: 0 auto;
+
+		@include mq(sm) {
+			font-size: $font-m;
+		}
+
+		@include mq(md) {
+			font-size: $font-l;
+		}
+	}
+
+	.home__section-heading {
+		color: $orange;
+		margin: 0;
+		width: 100%;
+		text-align: center;
+		display: block;
+		font-size: $font-l;
+		font-family: $font-regular;
+		font-weight: 300;
+
+		@include mq(md) {
+			font-size: $font-xl;
+		}
+	}
+
+	.home__service-list {
+		@include flex-container();
+	}
+
+	.home__service-item {
+		background: url("#{$icons}icon-cog.png") no-repeat 30px center;
+		background-size: 50px 50px;
+		margin-top: 50px;
+		padding-left: 100px;
+		width: 100%;
+		min-height: 55px;
+
+		@include mq(sm) {
+			width: 33%;
+			padding-top: 135px;
+			padding-left: 0;
+			background-position: center top;
+			background-size: auto;
+			text-align: center;
+		}
+	}
+
+	.home__service-title {
+		font-size: $font-m;
+		font-family: $font-regular;
+		font-weight: 300;
+		color: $orange;
+	}
+
+	.home__service-summary {
+		font-size: $font-s;
+		font-family: $font-regular;
+		font-weight: 400;
+		color: $dark-grey;
+		margin: 5px 0 0;
+
+		@include mq(sm) {
+			margin: 20px auto 0;
+			max-width: 325px;
+		}
+	}
+
+	.home__service-control {
+		text-align: center;
+		padding-top: 30px;
+
+		@include mq(sm) {
+			padding-top: 0;
+		}
+	}
